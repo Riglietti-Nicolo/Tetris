@@ -1,0 +1,207 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    position: relative;
+
+}
+
+.game_container {
+    display: grid;
+    width: 1200px;
+    height: 900px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+        "tl tl tl tl . ."
+        "gl gl gl gl inf inf"
+        "gl gl gl gl inf inf"
+        "gl gl gl gl inf inf"
+        "gl gl gl gl inf inf"
+        "gl gl gl gl inf inf"
+        "gl gl gl gl inf inf";
+
+    margin-left: 30vh;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: tl;
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    font-family: cursive;
+    text-shadow: 2px 2px 5px #4682B4;
+}
+
+.game_label {
+    grid-area: gl;
+    border: 5px solid rgba(#4682B4);
+    gap: 1px;
+    box-shadow: 0 4px 10px 0 #008080, 0 4px 100px 0 #4682B4;
+    background-color: #4682B4;
+
+    margin-left: 13%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+    background-color: #008080;
+    width: 71%;
+    height: 790px;
+    z-index: 1;
+}
+
+.info {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: inf;
+    background: rgba(0, 0, 0, 0.5);
+    border: 5px solid black;
+    z-index: 1;
+
+    color: white;
+    box-shadow: 0 4px 10px 0 #008080, 0 4px 80px 0 #4682B4;
+    border-radius: 20px;
+}
+
+.score_label,
+.next_label,
+.time_label {
+    margin-top: -50px;
+
+}
+
+.info div {
+    display: flex;
+    border: 5px solid black;
+    font-size: 28px;
+    width: 150px;
+    height: 75px;
+    justify-content: center;
+    align-items: center;
+}
+
+.info .next_label {
+    width: 150px;
+    height: 150px;
+    border: 1px solid white;
+}
+
+.cell {
+    width: 55px;
+    height: 55px;
+    background-color: lightgrey;
+}
+
+.active {
+    /* background-color: #4682B4; */
+    box-shadow:
+        inset 0 5px 10px #164c79,
+        inset 0 -5px 10px #164c79,
+        inset 5px 0 10px #164c79,
+        inset -5px 0 10px #164c79;
+}
+
+.locked {
+    /* background-color: #4682B4;  */
+    box-shadow:
+        inset 0 3px 10px #4b0909,
+        inset 0 -3px 10px #1f0647,
+        inset 3px 0 10px #7a4601,
+        inset -3px 0 10px #0c3150;
+
+}
+
+
+
+/*background*/
+
+.points-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Evita che interferisca con il resto della pagina */
+}
+
+.point {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: aquamarine;
+    /* Puoi cambiare colore qui */
+    border-radius: 50%;
+}
+
+
+#top_score {
+    background-color: white;
+    display: none;
+    width: 800px;
+    height: 500px;
+    z-index: 1;
+    position: relative;
+    margin-top: -700px;
+    margin-left: 500px
+}
+
+#player_name {
+    background-color: white;
+    display: block;
+    width: 800px;
+    height: 500px;
+    z-index: 1;
+    position: relative;
+    margin-top: -700px;
+    margin-left: 500px
+}
+
+#game_over {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+    margin-top: -970px;
+    color: white;
+    text-align: center;
+    line-height: 80vh;
+    font-size: 100px;
+    text-shadow: 5px 5px 5px red;
+    font-weight: bold;
+
+}
+
+p {
+    height: 50px;
+}
+
+.new_game {
+    font-family: cursive;
+    border: 1px solid black;
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+
+    color: white;
+
+    background-color: #6c757d;
+
+    border: 2px solid #164c79;
+
+    cursor: pointer;
+
+}
