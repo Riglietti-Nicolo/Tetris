@@ -156,8 +156,15 @@ function moveTetramino(event) {
             if (!checkCollision(rotatedTetramino, tetraminoX, tetraminoY)) {
                 newTetramino = rotatedTetramino;
             }
-
             break;
+
+        case " ":
+            
+            while (!checkCollision(newTetramino, newX, newY + 1)) {
+                newY++;
+            }  
+            break;
+            
         default:
             break;
     }
